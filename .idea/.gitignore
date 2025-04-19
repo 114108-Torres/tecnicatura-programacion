@@ -1,0 +1,42 @@
+# Archivos de compilación
+*.class
+
+# Directorios de construcción
+/bin/
+/build/
+
+# Archivos de entorno de IntelliJ IDEA
+*.iml
+.idea/
+out/
+
+# Archivos de Eclipse
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+.metadata
+*.classpath
+*.project
+*.settings/
+
+# Archivos de NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Archivos de Gradle
+.gradle/
+build/
+
+# Archivos de Maven
+target/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
