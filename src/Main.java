@@ -3,12 +3,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el precio del artículo:");
-        double precio = scanner.nextInt();
+        System.out.println("Ingrese el precio del artículo: $");
+        double precio = scanner.nextDouble();
 
         double precioFinal = precio * 1.21;
+        double total = Math.round(precioFinal * 100.0) / 100.0;
 
-        System.out.println("El precio final con IVA 21% incluído es de: " + precioFinal);
+        System.out.println("El precio final con IVA 21% incluído es de $" + total );
 
     }
 }
