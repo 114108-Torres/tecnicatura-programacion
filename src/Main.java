@@ -3,19 +3,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese un numero:");
-        int numeroUno = scanner.nextInt();
-        System.out.println("Ingrese otro numero:");
-        int numeroDos = scanner.nextInt();
+        System.out.println("Ingrese el precio del artículo:");
+        double precio = scanner.nextInt();
 
-        int suma = numeroUno + numeroDos;
-        int resto = numeroUno - numeroDos;
-        int multiplicacion = numeroUno * numeroDos;
-        int division = numeroUno / numeroDos;
+        double precioFinal = precio * 1.21;
 
-        System.out.println("La suma de los números es: " + suma);
-        System.out.println("La resta de los números es: " + resto);
-        System.out.println("La multiplicación de los números es: " + multiplicacion);
-        System.out.println("La division de los números es: " + division);
+        System.out.println("El precio final con IVA 21% incluído es de: " + precioFinal);
+
     }
 }
