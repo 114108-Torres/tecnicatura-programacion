@@ -1,33 +1,21 @@
 import java.util.Scanner;
 
-/* 5. Ingresar la cantidad de horas trabajadas por un empleado y el sueldo que cobra por hora.
- Indique el total a cobrar teniendo en cuenta que si trabajó más de 180 horas las excedentes las cobra con un 50 % de aumento.
+/* 6. Ingresar un año e indicar si ese año es bisiesto.
+Un año es bisiesto si es múltiplo de 4 y no es múltiplo de 100 o si es múltiplo de 400.
  */
 
 public class Main {
     public static void main(String[] args) {
-         int HORAS_BASE = 180;
-         double EXTRA_MULTIPLICADOR = 1.5;
 
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el año: ");
+        int anio = scanner.nextInt();
+        boolean esBisiesto = (anio % 4  == 0 && anio % 100 != 0) || (anio % 400 == 0);
 
-        System.out.print("Ingrese la cantidad de horas trabajadas por el empleado: ");
-        int horasTrabajadas = scanner.nextInt();
-
-        System.out.print("Ingrese el sueldo por hora: $");
-        double sueldoPorHora = scanner.nextDouble();
-
-        double salarioTotal;
-
-        if (horasTrabajadas <= HORAS_BASE) {
-            salarioTotal = horasTrabajadas * sueldoPorHora;
+        if (esBisiesto) {
+            System.out.println("El año "+anio+" es bisiesto");
         } else {
-            int horasExtra = horasTrabajadas - HORAS_BASE;
-            salarioTotal = (HORAS_BASE * sueldoPorHora) + (horasExtra * sueldoPorHora * EXTRA_MULTIPLICADOR);
+            System.out.println("El año  "+anio+" no es bisiesto");
         }
-
-        salarioTotal = Math.round(salarioTotal * 100.0) / 100.0;
-
-        System.out.println("Salario a percibir: $" + salarioTotal);
     }
 }
