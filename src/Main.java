@@ -2,24 +2,28 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int CantidadArticulos = 3;
         Scanner scanner = new Scanner(System.in);
-        double subTotal = 0;
+        double altura1;
+        double altura2;
+        String nombre1;
+        String nombre2;
 
-        for (int i = 1  ; i <= CantidadArticulos; i++) {
-            System.out.println("Ingrese el precio del articulo" + i +  " $ ");
-            double precio = scanner.nextDouble();
+            System.out.println("Ingrese el nombre de la primer persona" );
+            nombre1 = scanner.next();
+            System.out.println("Ingrese la altura de la primer persona" );
+            altura1 = scanner.nextDouble();
 
-            System.out.println("Ingrese la cantidad del articulo" + i );
-            int cantidad = scanner.nextInt();
+            System.out.println("Ingrese el nombre de la segunda persona" );
+             nombre2 = scanner.next();
+            System.out.println("Ingrese la altura de la segunda persona" );
+            altura2 = scanner.nextDouble();
 
-            subTotal += precio * cantidad;
-        }
+            if (altura1 > altura2) {
+                System.out.println("La persona más alta es: " +  nombre1);
+            } else {
+                System.out.println("La persona más alta es: " +  nombre2);
+            }
 
-        double precioFinal = subTotal * 1.21;
-        double total = Math.round(precioFinal * 100.0) / 100.0;
-
-        System.out.println("El precio final con IVA 21% de la factura es de $" + total );
 
     }
 }
