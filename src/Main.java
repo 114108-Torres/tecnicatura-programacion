@@ -1,22 +1,25 @@
-import java.util.Scanner;
 /*
-8. Dado el valor de los tres lados de un triángulo se necesita calcular su perímetro.
-Se pide crear en el mé_todo main() un objeto y determinar si el perímetro es superior a 10. Determinar la o las clases necesarias, sus atributos y métodos.
+ * Escribe un programa que muestre por consola (con un print) los
+ * números de 1 a 100 (ambos incluidos y con un salto de línea entre
+ * cada impresión), sustituyendo los siguientes:
+ * - Múltiplos de 3 por la palabra "fizz".
+ * - Múltiplos de 5 por la palabra "buzz".
+ * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
  */
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese el lado 1 del triangulo");
-        int lado1 = sc.nextInt();
-        System.out.println("Ingrese el lado 2 del triangulo");
-        int lado2 = sc.nextInt();
-        System.out.println("Ingrese el lado 3 del triangulo");
-        int lado3 = sc.nextInt();
-
-        Triangulo triangulo = new Triangulo(lado1, lado2, lado3);
-        double perimetro = triangulo.calcularPerimetro();
-        System.out.println("El perimetro es: " + perimetro);
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("fizzbuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
     }
 }
