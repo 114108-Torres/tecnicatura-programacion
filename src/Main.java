@@ -1,32 +1,24 @@
 import java.util.Scanner;
 
-/* 7. Una empresa de alquiler de autos cobra $300 por día si no se superan los 200 km de uso diario.
- Por cada km extra hasta los 1000 km cobra $5 adicionales, y a partir de los 1000 cobra $10 adicionales.
- Hacer un programa que solicite la cantidad de km realizados por un cliente e indique el importe que se le debe cobrar.
+/* 8. Ingresar 10 números por teclado, informar su suma y promedio.
  */
 
 public class Main {
     public static void main(String[] args) {
-        double kilometraje;
-        double importe = 300;
-        int kmBase = 200;
-        double impTotal = 0;
+    int numTotales = 10;
+    int total = 0;
+    double promedio;
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese la cantidad de kilometrajes: ");
-        kilometraje = scanner.nextDouble();
+    Scanner sc = new Scanner(System.in);
 
-        if (kilometraje < 200 && kilometraje > 0) {
-            impTotal = importe;
-        }
-        else if (kilometraje >= 200 && kilometraje < 1000) {
-            double impExtra = (kilometraje - kmBase)*5;
-            impTotal= importe + impExtra;
-
-        } else if (kilometraje >= 1000) {
-            double impExtra = (kilometraje - kmBase)*10;
-            impTotal= importe + impExtra;
-        }
-        System.out.println("El importe es a cobrar es: $" + impTotal);
+    for (int i = 1; i <= numTotales; i++) {
+    System.out.println("Ingrese un numero: ");
+    int num = sc.nextInt();
+    total += num;
     }
+    promedio =  total / numTotales;
+
+    System.out.println("El promedio es: " + promedio);
+    System.out.println("El total es: " + total);
+}
 }
