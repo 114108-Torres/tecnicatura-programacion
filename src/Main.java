@@ -1,16 +1,22 @@
 import java.util.Scanner;
 /*
-6. Programar una clase Equipo que represente a un equipo de fútbol. Incluir en la misma atributos para almacenar el nombre del equipo
- y los datos relativos a un campeonato con forma de liga: puntos, cantidad de partidos ganados, empatados y perdidos,
- cantidad de goles realizados y recibidos y posición.
+8. Dado el valor de los tres lados de un triángulo se necesita calcular su perímetro.
+Se pide crear en el mé_todo main() un objeto y determinar si el perímetro es superior a 10. Determinar la o las clases necesarias, sus atributos y métodos.
  */
 
 public class Main {
     public static void main(String[] args) {
-        Equipo river = new Equipo("River", 12, 3, 2, 30, 10, 1,5);
-        Equipo boca = new Equipo("Boca", 11, 4, 2, 28, 12, 2, 9);
+        Scanner sc = new Scanner(System.in);
 
-        Partido superclasico = new Partido(river, boca, 3, 2);
-        superclasico.mostrarResultado();
+        System.out.println("Ingrese el lado 1 del triangulo");
+        int lado1 = sc.nextInt();
+        System.out.println("Ingrese el lado 2 del triangulo");
+        int lado2 = sc.nextInt();
+        System.out.println("Ingrese el lado 3 del triangulo");
+        int lado3 = sc.nextInt();
+
+        Triangulo triangulo = new Triangulo(lado1, lado2, lado3);
+        double perimetro = triangulo.calcularPerimetro();
+        System.out.println("El perimetro es: " + perimetro);
     }
 }
