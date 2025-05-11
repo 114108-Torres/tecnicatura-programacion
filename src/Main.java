@@ -1,24 +1,30 @@
 import java.util.Scanner;
 
-/* 8. Ingresar 10 números por teclado, informar su suma y promedio.
+/* 9. Ingresar un número n y a continuación n números positivos.
+Informar la cantidad de mayores a 5 que se hayan ingresado.
  */
 
 public class Main {
     public static void main(String[] args) {
-    int numTotales = 10;
-    int total = 0;
-    double promedio;
+        Scanner sc = new Scanner(System.in);
 
-    Scanner sc = new Scanner(System.in);
+        System.out.print("¿Cuántos números desea ingresar?: ");
+        int cantidadNumeros = sc.nextInt();
 
-    for (int i = 1; i <= numTotales; i++) {
-    System.out.println("Ingrese un numero: ");
-    int num = sc.nextInt();
-    total += num;
+        int mayoresA5 = 0;
+
+        for (int i = 1; i <= cantidadNumeros; i++) {
+            System.out.print("Ingrese un número positivo (" + i + " de " + cantidadNumeros + "): ");
+            int numero = sc.nextInt();
+
+            if (numero > 0 && numero > 5) {
+                mayoresA5++;
+            } else if (numero <= 0) {
+                System.out.println("⚠️ El número debe ser positivo. No se contabiliza.");
+                i--; // Repetir esta vuelta
+            }
+        }
+
+        System.out.println("Se ingresaron " + mayoresA5 + " números mayores a 5.");
     }
-    promedio =  total / numTotales;
-
-    System.out.println("El promedio es: " + promedio);
-    System.out.println("El total es: " + total);
-}
 }
