@@ -1,45 +1,26 @@
 import java.util.Scanner;
 /*
-3 Agregar a la clase persona un métdo que retorne su índice de masa corporal. Este último dato se calcula como: IMC = peso / altura2
+5. Programar una clase Auto con datos de un automotor (marca, modelo, precio y kilometraje). Incluir un mé_todo que retorne la antigüedad del auto.
  */
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("¿Cuántas personas desea ingresar?: ");
-        int cantidad = sc.nextInt();
-        sc.nextLine(); // Limpia el buffer
+        System.out.print("Ingrese los datos del auto.");
+        sc.nextLine();
+        System.out.print("Ingrese la marca: ");
+        String marca = sc.nextLine();
+        System.out.print("Ingrese el modelo: ");
+        String modelo = sc.nextLine();
+        System.out.print("Ingrese el precio: ");
+        double precio = sc.nextInt();
+        System.out.print("Ingrese el kilometraje: ");
+        double km = sc.nextDouble();
+        System.out.print("Ingrese el año de fabricación: ");
+        int año = sc.nextInt();
 
-        Persona[] personas = new Persona[cantidad];
-
-        for (int i = 0; i < cantidad; i++) {
-            System.out.println("\n--- Persona " + (i + 1) + " ---");
-
-            System.out.print("Nombre: ");
-            String nombre = sc.nextLine();
-
-            System.out.print("Apellido: ");
-            String apellido = sc.nextLine();
-
-            System.out.print("Edad: ");
-            int edad = sc.nextInt();
-
-            System.out.print("Peso: ");
-            double peso = sc.nextDouble();
-
-            System.out.print("Altura: ");
-            double altura = sc.nextDouble();
-
-
-            sc.nextLine(); // Limpia el buffer
-
-            personas[i] = new Persona(nombre, apellido, edad, peso, altura);
-        }
-
-        System.out.println("\n--- Personas Ingresadas ---");
-        for (Persona p : personas) {
-            p.mostrarDatos();
-        }
+        Auto auto = new Auto(marca, modelo, precio, km,año);
+        System.out.println("La antigüedad del auto es de : " + auto.antiguedadAuto() + " años.");
     }
 }
